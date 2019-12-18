@@ -1,0 +1,13 @@
+Last_Page: https://10.11.64.244/
+Browser: chrome 
+Traceback: File "d:\software\mypython\lib\unittest\case.py", line 628, in run
+    testMethod()
+  File "D:\work\Base_test\test_dir\test_pic.py", line 436, in test_bwlist
+  File "D:\work\Base_test\test_dir\test_pic.py", line 19, in file_compare
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\base_case.py", line 2209, in assert_equal
+    self.assertEqual(first, second, msg=msg)
+  File "d:\software\mypython\lib\unittest\case.py", line 852, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "d:\software\mypython\lib\unittest\case.py", line 845, in _baseAssertEqual
+    raise self.failureException(msg)
+Exception: False != True : 对比图片

@@ -1,0 +1,10 @@
+Last_Page: https://10.11.64.244/
+Browser: chrome 
+Traceback: File "d:\software\mypython\lib\unittest\case.py", line 628, in run
+    testMethod()
+  File "D:\work\Base_test\test_dir\test_pic.py", line 339, in test_loginAudit
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\base_case.py", line 128, in click
+    self.driver, selector, by, timeout=timeout)
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\page_actions.py", line 266, in wait_for_element_visible
+    selector, timeout, plural))
+Exception: Message: Element {//div[contains(text(),'账号登录日志')]} was not visible after 6 seconds!

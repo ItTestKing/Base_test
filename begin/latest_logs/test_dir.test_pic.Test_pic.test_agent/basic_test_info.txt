@@ -1,0 +1,15 @@
+Last_Page: [WARNING! Browser Not Open!]
+Browser: chrome 
+Traceback: File "d:\software\mypython\lib\unittest\case.py", line 628, in run
+    testMethod()
+  File "D:\work\Base_test\test_dir\test_pic.py", line 456, in test_agent
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\base_case.py", line 93, in open
+    self.driver.get(url)
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+Exception: Message: chrome not reachable
+  (Session info: chrome=79.0.3945.79)

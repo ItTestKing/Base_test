@@ -1,0 +1,400 @@
+<base href="https://10.11.64.244">
+<html><head>
+
+        <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+
+        <!-- CSS Files -->
+        <link href="/master/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/master/css/style.css" rel="stylesheet">
+        <!-- jQuery and Bootstrap -->
+        <script src="/master/js/jquery/jquery-2.1.1.min.js"></script>
+
+        <!--判断浏览器-->
+        <script>
+            ;(function(){
+                //判断是否是IE,以及IE版本
+                function IEVersion(){
+                    var userAgent = navigator.userAgent;
+                    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+                    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE;
+                    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+
+                    if(isIE || isEdge || isIE11) {
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                }
+                if(IEVersion()){
+                    window.location.href="/chrome.html";
+                }
+            })();
+        </script>
+
+        <script type="text/javascript">
+        var serverNm = '10.11.64.244';
+        var init_stage = '0';
+        function gotoMaster() {
+            window.location.href = "/master/login/login.php";
+        }
+        function gotoAdmin() {
+            window.location.href = "/admin/";
+        }
+        function doMouseOver(idValue) {
+            $('#' + idValue).css("filter", "alpha(Opacity=90)");
+            $('#' + idValue).css("-moz-opacity", "0.9");
+            $('#' + idValue).css("opacity", "0.9");
+        }
+        function doMouseOut(idValue) {
+            $('#' + idValue).css("filter", "alpha(Opacity=100)");
+            $('#' + idValue).css("-moz-opacity", "1");
+            $('#' + idValue).css("opacity", "1");
+        }
+        function changeSize() {
+            $('#contentDivBg').hide();
+            var width = $('body').width();
+            var height = $('#bgDiv').height();
+            var left = 0;
+            if (width > 1000) {
+                left = (width - 1000) / 2;
+            }
+            var left1=0;
+            if (width > 1000) {
+                left1 = (width - 700) / 2;
+            }
+            $('#contentDivBg').css("left", left + "px");
+            $('#contentDivBg').show();
+            $('#contentDiv').css("left", left + "px");
+            $('.footerClass').css("top", height - 50 + "px");
+
+            $('#contentDivBg').css("top", (height - 412) / 2 + "px");
+            $('#contentDiv').css("top", (height - 412) / 2 + "px");
+            if (height<770) {
+                $('#serviceContractDiv').css("top", "10px");
+            } else {
+//                $('#serviceContractDiv').css("top", (height - 600) / 2 + "px");
+                $('#serviceContractDiv').css("top", "100px");
+              }
+            $('#serviceContractDiv').css("left", left1 + "px");
+            $('#serviceContractDivShadow').css("height", height);
+        }
+
+        function welcomeShowCommonDiv(divID) {
+            $('#' + divID + "Shadow").show();
+            $('#' + divID).show();
+        }
+        function welcomeHideCommonDiv(divID) {
+            $('#' + divID).hide();
+            $('#' + divID + "Shadow").hide();
+        }
+    </script>
+    </head>
+    <body onresize="changeSize();" style="min-width:1024px;min-height: 900px;">
+        <div id="bgDiv" style="width:100%; height:100%;background:url('/master/img/background.png') no-repeat; -moz-background-size:100% 100%;
+             background-size:100% 100%;">
+            <div style="position:absolute;top:0px;left:0px;height: 90px;width:100%;background-color: #26354c;filter:alpha(Opacity=20);-moz-opacity:0.2;opacity:0.2;">&nbsp;</div>
+            <div style="height: 72px;position:relative;width:1000px;margin:0 auto;padding-top:13px">
+                <img src="/master/img/logoTransparent.png" style="height:72px;">
+            </div>
+            <!-- <div id="contentDivBg" style="position:absolute;top:200px;width:1000px;height:520px;background-color: #99b8ce;box-shadow: 2px 2px 4px rgb(52, 53, 54);filter:alpha(Opacity=52);-moz-opacity:0.52;opacity:0.52;">
+                &nbsp;
+            </div> -->
+            <div id="contentDiv" style="position: absolute; width: 1000px; top: 244px; height: 412px; border: 0px solid rgb(255, 255, 255); overflow: hidden; left: 109.5px;">
+                <div style="float:left;padding-left:50px;padding-right:50px;padding-top:30px;padding-bottom:30px;display:inline-block;width:495px;height:100%">
+                    <div style="margin:0 auto;width:224px;height:203px">
+                        <img id="btnMaster" src="/master/img/conf.png" title="进入产品配置系统" style="cursor:pointer;width:100%;height:100%;" onclick="gotoMaster();" onmouseover="doMouseOver('btnMaster');" onmouseout="doMouseOut('btnMaster');">
+                    </div>
+                    <div style="padding-top:30px">
+                        <div style="border:2px solid #fff;width:268px;height:40px;font-size:20px;color:white;margin:0 auto;text-align:center;line-height:40px;letter-spacing:2px;cursor:pointer;" id="masterConfigBtn" onclick="gotoMaster();" onmouseover="doMouseOver('masterConfigBtn');" onmouseout="doMouseOut('masterConfigBtn');">产品配置系统</div>	
+                        <div style="width:272px;height:40px;color:white;margin:0 auto;letter-spacing:2px;padding-top:10px;font-size:14px">配置产品服务器的网络，激活序列号，设置产品管理系统管理员用户的基本信息，监控产品服务器的运行状态。</div>
+                    </div>
+                </div>
+                <div style="width:0px;border:1px solid #fff;height:360px;margin-top:25px;display:inline-block;"></div>
+
+                <div style="float:right; padding-left:50px;padding-right:50px;padding-top: 30px;padding-bottom:30px;display:inline-block;width:494px;height:100%">
+                    
+                    <div style="width:224px;height:203px;margin:0 auto;">
+                        <img id="btnAdmin" class="adminBtnClass" src="/master/img/admin.png" title="进入产品管理系统" style="cursor: pointer; width: 100%; height: 100%; float: right;" onclick="gotoAdmin();" onmouseover="doMouseOver('btnAdmin');" onmouseout="doMouseOut('btnAdmin');">
+                        <!-- <img id="btnAdmin" class="adminBtnClass" src="/master/img/admin.png" title="进入产品管理系统" style="cursor:pointer;display: none;width:150px;height:150;float:right;" onclick="gotoAdmin();" onMouseOver="doMouseOver('btnAdmin');" onMouseOut="doMouseOut('btnAdmin');"/> -->
+                        <img class="adminBtnClass" src="/master/img/admin.png" style="opacity: 0.5; width: 100%; height: 100%; float: right; display: none;">
+                    </div>
+                    <div style="padding-top:30px">	
+                        <div style="border:2px solid #fff;width:268px;height:40px;font-size:20px;color:white;margin:0 auto;text-align:center;line-height:40px;letter-spacing:2px;cursor:pointer;" id="adminConfigBtn" onclick="gotoAdmin();" onmouseover="doMouseOver('adminConfigBtn');" onmouseout="doMouseOut('adminConfigBtn');">产品管理系统</div>	
+                        <div style="width:272px;height:40px;color:white;margin:0 auto;letter-spacing:2px;padding-top:10px;font-size:14px">部署企业安全探针，收集并设置企业终端安全信息，掌握企业终端的安全情况。</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerClass" style="position: absolute; left: 0px; height: 47px; width: 100%; background-color: rgb(38, 53, 76); opacity: 0.2; top: 850px;">&nbsp;</div>
+        <div class="footerClass" style="position: absolute; left: 0px; width: 100%; padding-top: 15px; top: 850px;">
+            <span style="float:right;color:#fff;padding-right: 50px;">
+                ©
+                2015-2019                &nbsp;
+                北京杰思安全科技有限公司                &nbsp;|&nbsp;
+                <span>
+                    杰思猎鹰主机安全响应系统                    V5.0 R28B1944H0                     &nbsp;
+                </span>&nbsp;|&nbsp;推荐使用Chrome、Firefox浏览器，推荐使用分辨率&nbsp;1920*1080
+            </span>
+        </div>
+        <link rel="stylesheet" href="/master/css/iview/iview.css">
+<link rel="stylesheet" href="/master/font-awesome/css/font-awesome.css">
+<div id="serviceContractDivShadow" class="shadowClass" style="position: fixed; left: 0px; top: 0px; background: rgb(136, 136, 136); width: 100%; height: 900px; opacity: 0.7; z-index: 1100; display: none;">
+</div>
+<script>
+    function approveContract() {
+//        alert(this.prop("value"));
+        var resul = document.getElementById("agreement1").checked;
+        if (resul == true) {
+            $('#approveContract').css("background-color", "#006ec3");
+            $('#approveContract').prop('disabled', false);
+            // setGreetingMesStatus();
+        } else {
+            $('#approveContract').css("background-color", "#AAAAAA");
+            $('#approveContract').prop('disabled', 'disabled');
+        }
+
+    }
+    function setGreetingMesStatus(){
+        $.get("/master/ajaxActions/setGreetingMesStatusAction.php", function(data){
+            var jsonobj = JSON.parse(data);
+            if(jsonobj.Result.Status==0){
+                $('#shadowBusy').css('display','block');
+                setTimeout(function(){window.location.href='/'}, 2000);
+                $('.adminBtnClass').toggle();
+            }   
+        });
+    }
+ 
+</script>
+<div id="serviceContractDiv" class="panel panel-dialog d-is-open" style="position: fixed; width: 700px; height: auto; z-index: 1101; display: none; margin: 0px auto; padding: 0px; background: none 0px 0px repeat scroll rgb(255, 255, 255); border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px; top: 100px; left: 259.5px;">
+    <div style="background: #fff none repeat scroll 0 0;
+         border-radius: 5px;color: #000">
+        <div class="hd" style="text-align: center;">
+            <div style="background: #f2f2f2 none repeat scroll 0 0;
+                 border-bottom: 1px solid #e5e5e5;
+                 border-top-left-radius: 5px;
+                 border-top-right-radius: 5px;
+                 color: #333;
+                 font-size: 16px;
+                 font-weight: normal;
+                 height: 60px;
+                 line-height: 60px;
+                 text-align: center;
+                 width:100%;">
+                <span style="width: 300px;  
+                      ">《<span product_name=""></span>授权许可协议》</span>
+            </div>
+        </div>
+
+        <div style="background: #fff none repeat scroll 0 0;
+             height: auto;
+             min-height: 200px;
+             padding: 10px 0 30px;">
+            <div class="serviceContranct" style="    height: 350px;
+                 line-height: 1.5em;
+                 margin: 0 auto;
+                 overflow-y: scroll;
+                 padding: 10px 30px;
+                 width: 635px;">
+                <strong><span product_name=""></span>授权许可协议</strong>
+                <br>
+                请务必认真阅读和理解本《<span product_name=""></span>授权许可协议》（以下简称《协议》）中规定的所有权利和限制。<span company_fname=""></span>（以下皆称为“<span company_sname=""></span>”）许可您（自然人或法人）使用本授权软件，条件是您必须接受本授权许可协议的全部条款。本文件为您与<span company_sname=""></span>之间合法及可执行的合同。如果您不同意本《协议》中的条款，请不要安装、复制或使用本软件。
+                除非在此处另外说明，否则引号中的名词将具有本授权许可协议的“定义” 部分中给出的含义。
+                <br>
+                <strong>1 定义：</strong>
+                <br>
+                “内容更新”是指由某些<span company_sname=""></span>产品使用的经常更新的内容，包括但不限于：针对高级威胁的反威胁规则的更新；针对反间谍软件产品的反间谍软件定义的更新；针对反垃圾邮件产品的反垃圾邮件规则的更新；针对防病毒和犯罪软件产品的病毒定义的更新；针对内容过滤和防网页仿冒产品的 URL 列表的更新；针对防火墙产品的防火墙规则的更新；针对入侵检测产品的入侵检测数据的更新；针对网站验证产品的已验证网页列表的更新；针对策略遵从产品的策略遵从规则的更新；以及针对漏洞评估产品的漏洞特征的更新。
+                “文档”是指<span company_sname=""></span>随本授权许可软件一起提供的用户文档。
+                “许可证文件”是指下面一个或多个进一步定义您对本授权许可软件的许可权的适用文档：<span company_sname=""></span>授权许可证书或由<span company_sname=""></span>颁发的类似许可文档，或者您在签署本授权许可协议的同时、之前或之后与<span company_sname=""></span>签订的书面协议。
+                “授权许可软件”是指以目标代码形式随本授权许可协议一起提供的<span company_sname=""></span>软件产品，包括此类软件中包含的或者为了使用此类软件而提供的文档，或者本授权许可协议所附带的文档。
+                “支持证书”是指由<span company_sname=""></span>颁发的证书，用于确认您已为本授权许可软件购买适用的<span company_sname=""></span>维护/支持。
+                “升级版”是指根据<span company_sname=""></span>当时最新的升级政策，已公开发布用于取代<span company_sname=""></span>价格列表上本授权许可软件上一版本的任意版本。
+                “使用级别”是指订购授权许可软件时有效的许可证使用计量设施或模型（其中可能包括操作系统、硬件系统、应用程序或计算机等级限制（如果适用）），通过使用级别，<span company_sname=""></span>可以衡量此类授权许可软件、对其进行定价并授予使用权限，如本授权许可协议和适用的许可证文件中所述。
+                <br>
+                <strong>2 授予许可证：</strong>
+                <br>
+                在您遵守本授权许可协议的条款和条件的情况下，
+                <span company_sname=""></span>授权您：(i) 为了支持内部业务运营，按照本授权许可协议及适用的授权文件中规定的数量和使用级别，以非独占、不可转让（除非在第 14.1 部分中另外说明）的方式单独使用本授权软件；以及 (ii) 出于存档目的而制作本授权软件的单个非安装副本，您可以使用和安装该副本进行灾难恢复（也就是说，在这种情况下，本授权软件的主安装软件将无法使用）。
+                <br>
+                2.1 条款：
+                <br>
+                您使用此授权许可软件的权利将在适用许可证文件中指明的适用结束日期终止，在此适用结束日期后，您应停止使用本授权许可软件。
+                <br>
+                <strong>3 授权许可的限制：</strong>
+                <br>
+                除非在本授权协议中明确规定，否则未经<span company_sname=""></span>事先书面同意，您不得引导、促成或允许：(i) 使用、复制、修改、出租、租用、转租、再授权或转让本授权软件；(ii) 基于本授权软件创建任何衍生作品；(iii) 对本授权软件进行逆向工程、分解或反编译（除非是为了实现互操作目的而反编译本授权软件，前提是适用的法律允许您这么做，而且您严格遵守适用法律）；(iv) 将本授权软件与服务部门、设备管理、时分、服务提供商或类似活动结合使用，在这些活动中，您操作或使用本授权软件从第三方那里获得好处；(v) 由您之外的任何其他方使用本授权软件；(vi) 使用本授权软件的更高版本（如果该版本不是本授权许可协议附带的版本），除非您已通过许可证文件或支持证书单独购买了使用此类更高版本的权利；并且 (vii) 在使用本授权软件时不得超出本授权许可协议或适用许可证文件授予您的使用数量和使用级别。
+                <br>
+                <strong>4 所有权/版权：</strong>
+                <br>
+                本授权许可软件是<span company_sname=""></span>或其许可方的专有财产，受版权法保护。<span company_sname=""></span>和其许可方保留本授权许可软件（包括本授权许可软件的所有副本、改进、增强、修改和衍生品）的所有权利、所有权和权益。您使用本授权许可软件的权利仅限于本授权许可协议中明确授予的权利。所有未明确授予您的权利均由<span company_sname=""></span>和/或其许可方保留。
+                <br>
+                <strong>5 内容更新：</strong>
+                <br>
+                如果您购买的<span company_sname=""></span>维护/支持产品是由支持证书中所述的内容更新组成，或者包括这些内容更新，那么当 <span company_sname=""></span>向购买此类维护/支持产品的最终用户客户公开提供这些内容更新时，您有权将这些内容更新作为本授权许可软件的一部分使用，使用时段为适用的支持证书正面标明的时间段。除此之外，本授权许可协议不允许您取得或使用“内容更新”。
+                <br>
+                <strong>6 升级/跨级升级：</strong>
+                <br>
+                <span company_sname=""></span>保留要求只能按适用许可证文件中指明的数目获取本授权许可软件的任何升级（如果有）的权利。对现有许可证的升级并不表示许可您使用的许可证的数目会增加。此外，如果您升级授权许可软件许可证，或购买适用许可证文件中列出的授权许可软件许可证，以跨级升级现有许可证（即，增加其功能和/或将其转移到新的操作系统或将其转换到新的硬件层或许可计量单位），则<span company_sname=""></span>将在认为您已同意终止使用原来的许可证的基础上，颁发适用的许可证文件。任何此类许可证升级或跨级升级均根据订购时生效的<span company_sname=""></span>政策提供。本授权许可协议不单独许可您使用除您所购买许可证，以及 <span company_sname=""></span>按适用许可证文件中所述已授权的许可证以外的其他许可证。
+                <br>
+                <strong>7 有限担保：</strong>
+                <br>
+                7.1 介质担保：
+                <br>
+                如果<span company_sname=""></span>通过有形介质向您提供本授权许可软件，<span company_sname=""></span>保证，在正常使用的情况下，安装有本授权许可软件的硬件设备/服务器在交付之日起九十 (90) 天内不会有瑕疵。<span company_sname=""></span>将免费更换在保证期内退回 <span company_sname=""></span>的瑕疵介质。如果授权许可软件介质是因为对授权许可软件的非授权使用而损坏，上述保证将不适用。上述条款是当<span company_sname=""></span>违反该担保时您可获得的唯一补偿。
+                <br>
+                7.2 合同履行担保：
+                <br>
+                <span company_sname=""></span>保证本授权软件在<span company_sname=""></span>交付时，以及在根据相关文档使用的情况下，在交付后的九十 (90) 天内将完全符合相关文档。如果本授权软件不符合该保证，且您在九十 (90) 天的保证期内将此情况报告给<span company_sname=""></span>），那么<span company_sname=""></span>将根据自己的合理判断选择采取以下措施之一：(i) 修复本授权软件，(ii) 使用具有相同功能的软件替换本授权软件，或者 (iii) 终止本授权协议并退还为此类不符合要求的授权软件支付的相关许可费用。上述担保明确排除因事故、滥用、未授权修复、修改、增强或误用导致的瑕疵。上述条款是当<span company_sname=""></span>违反本担保时您可获得的唯一补偿。
+                <br>
+                <strong>8 担保免责声明：</strong>
+                <br>
+                在适用法律允许的最大范围内，第 7.1 和 7.2  部分中的担保是您所获得的独有担保，并取代所有其他明示或默示的担保，包括但不限于有关适销性、质量可靠、适用于特定用途及不侵害知识产权的默示保证。<span company_sname=""></span>不担保或声明本授权许可软件、内容更新或升级能够满足您的要求，或者本授权许可软件、内容更新或升级的运行或使用将不会中断或没有错误。
+                <br>
+                <strong>9 责任限制：</strong>
+                <br>
+                在法律允许的最大范围内，对于任何利润或商机损失、使用损失、收入损失、信誉损失、业务中断、数据丢失或者任何间接的、特殊的、附带的或后果性的损害赔偿，<span company_sname=""></span>及其许可人在任何情况下都不承担责任，无论是基于合同、侵权、疏忽、产品责任还是任何其他责任理论。在任何情况下，无论索赔是基于合同、侵权行为、严格赔偿责任还是任何其他责任理论，<span company_sname=""></span>及其许可人根据本协议所应承担的责任都不超过您为导致索赔的软件所支付的许可费。无论<span company_sname=""></span>或其许可人是否曾被告知可能发生此类损害赔偿，也不论任何补救措施是否达到其根本目的，上述限制始终适用。
+                <br>
+                <strong>10 维护/支持：</strong>
+                <br>
+                根据本授权许可协议，<span company_sname=""></span>没有义务为本授权许可软件提供维护/支持。为本授权许可软件购买的任何维护/支持都应遵守<span company_sname=""></span>当时的维护/支持政策。
+                <br>
+                <strong>11 软件评估：</strong>
+                <br>
+                如果为您提供本授权软件的目的是为了对其进行评估且您已经与<span company_sname=""></span>就本授权软件签署了评估协议，则您应按照此评估协议的条款所规定的权利评估本授权软件。如果您未与 <span company_sname=""></span>就本授权软件签署评估协议，且为您提供授权许可本软件的目的是为了对其进行评估，则适用以下条款和条件。<span company_sname=""></span>授予您仅使用本授权软件进行内部非生产评估的非独占、临时、免版税、不可转让的权利。此评估许可证应在以下时间终止：(i) 预先确定的评估
+                期的结束日期（如果已在本授权软件中预先确定评估
+                期），或 (ii) 从您初次安装本授权软件之日算起的六十 (60) 天后（如果未在本授权软件中预先确定评估期）（以下称“评估期”）。本授权软件按“原样”提供，不得转让，并且没有任何担保。您需独自负责采取适当措施备份系统，并采取其他措施以防任何文件或数据丢失。本授权软件可能包含自动禁用机制，该机制将在指定时段后阻止继续使用本软件。授权软件评估期结束后，您应停止使用本授权软件并销毁本授权软件的所有副本。否则，本授权许可协议的其他所有条款和条件将适用于您按此处的规定对本授权软件进行的评估。
+                <br>
+                <strong>12 终止：</strong>
+                <br>
+                如您违反本授权许可协议中的任何条款，本授权许可协议将会终止。一旦终止，您应立即停止使用并销毁本授权许可软件的所有副本。
+                <br>
+                <strong>13 继续有效条款：</strong>
+                <br>
+                本授权许可协议的以下条款在本授权许可协议终止后仍然有效：“定义”、“授权许可的限制”和对使用知识产权的任何其他限制、“所有权/版权”、“担保免责声明”、“责任限制”、“继续有效条款”和“一般条款”。
+                <br>
+                <strong>14 一般条款：</strong>
+                <br>
+                14.1 转让：
+                <br>
+                未经<span company_sname=""></span>事先明确的书面同意，您不得全部或部分转让下面或本授权许可协议中授予的权利，无论是通过合同、法律还是其他方式。
+                <br>
+                14.2 遵守适用的法律：
+                <br>
+                在您使用本授权许可软件时，您应独自负责遵守并同意遵守所有适用法律、法规和规章。
+                <br>
+                14.3 第三方程序：
+                <br>
+                本授权许可软件可能包含通过开放源代码或免费软件许可证提供的第三方软件程序（以下称“第三方程序”）。本授权许可协议不会改变这些开放源代码或免费软件许可证赋予您的任何权利或义务。即使此类许可证中有与本授权许可协议相反的条款，本授权许可协议中的担保免责条款和责任限制条款仍将适用于此类第三方程序。
+                <br>
+                14.4 完整的协议：
+                <br>
+                本授权许可协议及任何相关授权文件是您与<span company_sname=""></span>就本授权软件共同签署的完整和排他的协议，取代所有以前或同期达成的有关标的的口头或书面信息、建议和说明。本授权许可协议超越双方之间的任何订单、订购凭据、回执或确认函或您签发的其他凭据的任何冲突或附加条款，即使这些冲突或附加条款已经过签署并返回。本授权许可协议只能由在签订本授权许可协议时或之后签订的授权文件修改。
+                <br>
+                <strong>15 其他条款和条件：</strong>
+                <br>
+                除上述条款和条件外，您对本授权许可软件的使用还受以下条款和条件的约束。
+                <br>
+                15.1
+                <br>
+                其他定义。“服务器”是指可通过共享网络基础架构中的资源向客户端计算机提供服务或资源的一个独立系统或一台单独的计算机。服务器可以为其他计算机或设备运行服务器软件。
+                TB 是指授权许可软件管理的未压缩数据存储容量和/或计算机内存的总量。1 TB 等于 1,024 GB 数据。
+                “用户”是指获得了您授予的授权许可软件使用权并/或从授权许可软件使用中受益的个人和/或设备，或者实际使用授权许可软件的任何部分的个人和/或设备。
+                <br>
+                15.2
+                <br>
+                其他许可证权利和限制。
+                <br>
+                15.2.1
+                <br>
+                您可以根据<span company_sname=""></span>在此向您授予的授权用户数量和使用级别，并参照适用许可证文件中所述的内容，使用授权许可软件。您的许可证文件为您有权复制和使用这些副本的法律依据。
+                <br>
+                15.2.2
+                <br>
+                实例。尽管某些规定可能与本授权许可协议中的内容冲突，但授权许可软件的每个运行实例（物理和/或虚拟）均必须获得授权许可。您若执行软件的安装过程，即被视为创建软件的“实例”。您若复制现有实例，则也被视为创建软件的“实例”。其中所指的“授权许可软件”包含授权许可软件的“实例”。若您将软件加载到内存并执行一个或多个软件指令，则被视为“运行软件实例”。软件一旦运行，则被视为实例在运行（无论是否继续执行指令），直至将软件从内存中删除。
+                <br>
+                15.2.3
+                <br>
+                终端服务器。如果您购买了授权许可软件的许可证，以用于提供至局域网或广域网的端点与常用连接点的硬件设备/服务器（以下称“授权许可终端服务器”），此类授权许可终端服务器由未安装授权许可软件副本的端点（以下称“瘦客户端”）访问，则访问授权许可终端服务器的每个瘦客户端被视为“实例”，并且必须具有授权许可软件的有效许可证。如果授权许可终端服务器由已安装授权许可软件的授权副本的端点（以下称“胖客户端”）访问，胖客户端对授权许可终端服务器的此类访问则不被视为额外“实例”，您无需购买授权许可软件的额外许可证。
+                <br>
+                15.3 
+                <br>
+                数据收集；数据保护规定。一旦您使用本授权许可软件，<span company_sname=""></span>可能会收集、保留、披露和使用某些信息（以下称“收集的数据”）。收集的数据可能包括但不限于您的个人身份信息、您的设备或系统或者您的软件使用情况。<span company_sname=""></span>通常会使用这类收集的数据为您启用、优化和提供本授权许可软件或维护/支持（在此过程中还可能涉及到第三方），以及对<span company_sname=""></span>的产品和服务进行常规改进，包括通过查看汇总数据进行统计分析来进行此类改进。安装和/或使用本授权许可软件，即表示您同意允许<span company_sname=""></span>按照本部分中所述收集上述“收集的数据”。
+                <br>
+                15.4 
+                <br>
+                基准测试。未经<span company_sname=""></span>事前书面同意，您不得向任何第三方透露与授权许可软件有关的所有基准测试或任何其他测试的结果。
+                <br>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="ruleBox" style="    color: #333;
+         line-height: 22px;
+         padding: 0 0 5px;">
+        <p style="padding: 0 0 0 69px;">
+            <input id="agreement1" type="checkbox" checked="" name="agreement" onchange="approveContract();">
+            <label for="agreement1">
+                我已阅读并接受《<span product_name=""></span>授权许可协议》
+            </label>
+        </p>
+    </div>
+    <div>
+        <button id="approveContract" disabled="disabled" style="-moz-user-select: none;
+                background: rgba(0, 0, 0, 0) none repeat scroll 0 center;
+                border: 0 none;
+                border-radius: 2px;
+                box-sizing: border-box;
+                cursor: pointer;
+                display: inline-block;
+                margin: 0;
+                outline: 0 none;
+                overflow: visible;
+                padding: 0;
+                position: relative;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: middle;
+                background-color: #AAAAAA;
+                border-color: #006ec3;
+                color: #ffffff;width: 150px; height: 35px; right: 0px; left: 275px;
+                margin: 0 0 30px;" onclick="setGreetingMesStatus();">
+            <span>同意</span>
+        </button>
+    </div>
+    <div class="ivu-spin ivu-spin-default ivu-spin-fix" id="shadowBusy" style="display:none">
+        <div class="ivu-spin-main">
+            <span class="ivu-spin-dot"></span>
+            <div class="ivu-spin-text"></div>
+        </div>
+    </div>
+</div>    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            changeSize();
+            var stage = 3;
+            if (init_stage == '1') {
+                $('#agreement1').prop('checked', false);
+                                var product_name = '杰思猎鹰主机安全响应系统';
+                var company_fname = '北京杰思安全科技有限公司';
+                var company_sname = '杰思安全';
+                $('[product_name]').text(product_name);
+                $('[company_fname]').text(company_fname);
+                $('[company_sname]').text(company_sname);
+                welcomeShowCommonDiv('serviceContractDiv');
+            }else if(stage == 2){
+                console.log('22222222222222222');
+            }else {
+                $('.adminBtnClass').toggle();
+            }
+
+        });
+
+
+    </script>
+</body></html>

@@ -1,0 +1,22 @@
+Last_Page: [WARNING! Browser Not Open!]
+Browser: chrome 
+Traceback: File "d:\software\mypython\lib\unittest\case.py", line 628, in run
+    testMethod()
+  File "D:\work\Base_test\test_dir\test_pic.py", line 321, in test_file
+  File "D:\work\Base_test\test_dir\test_pic.py", line 17, in file_compare
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\base_case.py", line 1517, in save_screenshot
+    return page_actions.save_screenshot(self.driver, name, folder)
+  File "d:\software\mypython\lib\site-packages\seleniumbase\fixtures\page_actions.py", line 487, in save_screenshot
+    driver.get_screenshot_as_file(screenshot_path)
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1032, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1064, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1074, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "d:\software\mypython\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+Exception: Message: chrome not reachable
+  (Session info: chrome=79.0.3945.79)
